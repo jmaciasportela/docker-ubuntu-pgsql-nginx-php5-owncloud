@@ -78,7 +78,7 @@ USER root
 
 # Generate selfsigned certificate
 RUN mkdir /etc/nginx/ssl
-RUN printf "ES\\nCYL\\nValladolid\\nOwncloud\\nDocker\\nyour.server.com\\n\\n" | openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -keyout /etc/apache2/ssl/server.key -out /etc/apache2/ssl/server.crt
+RUN printf "ES\\nCYL\\nValladolid\\nOwncloud\\nDocker\\ndocker.oc.server\\n\\n" | openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 -keyout /etc/nginx/ssl/server.key -out /etc/nginx/ssl/server.crt
 
 # Configure nginx to run owncloud
 RUN rm /etc/nginx/sites-enabled/default
